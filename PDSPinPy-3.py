@@ -2,7 +2,6 @@ __author__ = 'agallo'
 # third try at PDSP display in Python
 # remark to change
 
-import time
 from time import sleep
 
 
