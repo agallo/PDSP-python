@@ -3,6 +3,17 @@ __author__ = 'agallo'
 # remark to change
 
 from time import sleep
+import wiringpi2 as wiringpi
+
+'''
+document pin assignment here
+probably want to use PHY pin numbering because the others are confusing
+'''
+
+
+def setup():
+    wiringpi.wiringPiSetupPhys()
+    # reset display
 
 
 def scrolldisplay(istring):
@@ -40,11 +51,16 @@ inputstring = list('123456789')
 # 24 hour time for input
 # inputstring = time.strftime('%I:%M:%S')
 
-while True:
-    if len(inputstring) == 8:
-        writedisplay(inputstring)
-    elif len(inputstring) > 8:
-        scrolldisplay(inputstring)
-    else:
-        pad(inputstring)
-    sleep(1)
+
+def main():
+    setup()
+    while True:
+        if len(inputstring) == 8:
+            writedisplay(inputstring)
+        elif len(inputstring) > 8:
+            scrolldisplay(inputstring)
+        else:
+            pad(inputstring)
+        sleep(1)
+
+main()
