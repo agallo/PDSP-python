@@ -1,6 +1,4 @@
-__author__ = 'agallo'
-# third try at PDSP display in Python
-# remark to change
+#!/usr/bin/python
 
 from time import sleep
 import wiringpi2 as wiringpi
@@ -8,11 +6,50 @@ import wiringpi2 as wiringpi
 '''
 document pin assignment here
 probably want to use PHY pin numbering because the others are confusing
+function    dest    via header  GPIO (header pin number)
+RESet       PDSP-1  ??          3
+A0          PDSP-3  ??          5
+A1          PDSP-4  ??          7
+A2          PDSP-5  ??          11
+A3          PDSP-6  ??          13
+CE          PDSP-14 ??          15
+WRite       PDSP-13 ??          19
+latch       ShfR-12 ??          21
+Data-out    ShfR-14 ??          23
+Clock       ShfR-11 ??          29
+--- Power & Ground
+GND         PDSP-16,18, ShfR-8,13 ??
+5V          PDSP-2,10,11,15,19 SfhR-10,16 ??
+--- Additional wiring (Shift Register to PDSP) included for documentation of schemaitc
+ShfR -  PDSP
+15      20
+1       21
+2       25
+3       26
+4       27
+5       28
+6       29
+7       30
 '''
+
+def reset():
+    #some code to reset
 
 
 def setup():
     wiringpi.wiringPiSetupPhys()
+    # assign pins
+    wiringpi.pinMode(3, 1)
+    wiringpi.pinMode(3, 1)
+    wiringpi.pinMode(5, 1)
+    wiringpi.pinMode(7, 1)
+    wiringpi.pinMode(11, 1)
+    wiringpi.pinMode(13, 1)
+    wiringpi.pinMode(15, 1)
+    wiringpi.pinMode(19, 1)
+    wiringpi.pinMode(21, 1)
+    wiringpi.pinMode(23, 1)
+    wiringpi.pinMode(29, 1)
     # reset display
 
 
