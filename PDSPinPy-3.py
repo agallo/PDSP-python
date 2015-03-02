@@ -3,6 +3,15 @@
 from time import sleep
 import wiringpi2 as wiringpi
 
+usleep = lambda x: sleep(x/1000000.0)
+
+# TODO command line argument: -i (string to display (need to fiugre out how to accept special chars)
+# TODO command line argument: -t (system local time, 12 hour (no AM or PM))
+# TODO command line argument: -T (system local time, 24 hour)
+# TODO command line argument: -u (UTC, 24 hour)
+# TODO command line argument: -s (echo what is being sent to display to standard out)
+
+
 '''
 document pin assignment here
 probably want to use PHY pin numbering because the others are confusing
@@ -32,8 +41,26 @@ ShfR -  PDSP
 7       30
 '''
 
+# define pin names (reformat pin assignment documentation (above) to be included here to avoid duplication)
+RST = 3
+A0  = 5
+A1  = 7
+A2  = 11
+A3  = 13
+CE  = 15
+WR  = 19
+latch = 21
+SER = 23
+CLK = 29
+
 def reset():
-    #some code to reset
+    # some code to reset
+    wiringpi.digitalWrite(RST, 0)
+    usleep(1)
+    wiringpi.digitalWrite(RST, 1)
+    usleep(150)
+    wiringpi.digitalWrite(A3, 1)
+    return
 
 
 def setup():
@@ -81,7 +108,7 @@ def pad(needtopad):
         needtopad.append(' ')
     return needtopad
 
-# main
+# main (to be replaced with arguments)
 inputstring = list('123456789')
 # 24 hour time for input
 # inputstring = time.strftime('%H:%M:%S')
