@@ -5,6 +5,7 @@ import wiringpi2 as wiringpi
 
 usleep = lambda x: sleep(x/1000000.0)
 
+# TODO figure out wiringPi2 shift register use
 # TODO command line argument: -i (string to display (need to fiugre out how to accept special chars)
 # TODO command line argument: -t (system local time, 12 hour (no AM or PM))
 # TODO command line argument: -T (system local time, 24 hour)
@@ -88,6 +89,8 @@ def scrolldisplay(istring):
         istring.append(istring.pop(0))
         sleep(.5)
     return
+
+
 
 
 def writedisplay(whattodisplay):
