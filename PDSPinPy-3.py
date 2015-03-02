@@ -3,7 +3,7 @@
 from time import sleep
 import wiringpi2 as wiringpi
 
-usleep = lambda x: sleep(x/1000000.0)
+usleep = lambda x: sleep(x / 1000000.0)
 
 # TODO figure out wiringPi2 shift register use
 # TODO command line argument: -i (string to display (need to fiugre out how to accept special chars)
@@ -44,15 +44,16 @@ ShfR -  PDSP
 
 # define pin names (reformat pin assignment documentation (above) to be included here to avoid duplication)
 RST = 3
-A0  = 5
-A1  = 7
-A2  = 11
-A3  = 13
-CE  = 15
-WR  = 19
+A0 = 5
+A1 = 7
+A2 = 11
+A3 = 13
+CE = 15
+WR = 19
 latch = 21
 SER = 23
 CLK = 29
+
 
 def reset():
     # some code to reset
@@ -91,8 +92,6 @@ def scrolldisplay(istring):
     return
 
 
-
-
 def writedisplay(whattodisplay):
     print
     for pos in range(0, 8):
@@ -129,5 +128,6 @@ def main():
         else:
             pad(inputstring)
         sleep(1)
+
 
 main()
