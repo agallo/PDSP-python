@@ -3,5 +3,4 @@ when connected to a Raspberry Pi.
 
 Things to do:
     * Add in necessary code to send output to GPIO
-    (need to determine if using RPi.GPIO or wiringPi)
-    * more flexible input (currently, using statically defined variable)
+    * more flexible input via args (currently, using statically defined variable)
