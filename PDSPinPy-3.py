@@ -92,34 +92,21 @@ def scrolldisplay(istring):
 
 
 def writedisplay(whattodisplay):
-    '''
-    ORIGINAL Arduino code -- need to check
-    digitalWrite(a0, (1&i)!=0?HIGH:LOW);
-    digitalWrite(a1, (2&i)!=0?HIGH:LOW);
-    digitalWrite(a2, (4&i)!=0?HIGH:LOW);
-    '''
-
-
 
     for pos in range(0, 8):
 
-        if 1 & pos <> 0 then:
-            digitalWrite(A0, HIGH)
+        if 1 & pos <> 0:
+            wiringpi.digitalWrite(A0, HIGH)
         else:
-            digitalWrite(A0, LOW)
-        if 2 & pos <> 0 then:
-             digitalWrite(A1, HIGH)
+            wiringpi.digitalWrite(A0, LOW)
+        if 2 & pos <> 0:
+             wiringpi.digitalWrite(A1, HIGH)
         else:
-            digitalWrite(A1, LOW)
-        if 4 & pos <> 0 then:
-            digitalWrite(A2, HIGH)
+            wiringpi.digitalWrite(A1, LOW)
+        if 4 & pos <> 0:
+            wiringpi.digitalWrite(A2, HIGH)
         else:
-            digitalWrite(A2, LOW)
-
-        #is this code needed or was it an attempt to convert the arduino C code in one line?
-        wiringpi.digitalWrite(A0, pos & 1)
-        wiringpi.digitalWrite(A1, pos & 2)
-        wiringpi.digitalWirte(A2, pos & 4)
+            wiringpi.digitalWrite(A2, LOW)
 
         wiringpi.digitalWrite(latch, LOW)
         wiringpi.shiftOut(SER, CLK, 1, whattodisplay[pos])
