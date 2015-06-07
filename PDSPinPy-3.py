@@ -109,7 +109,7 @@ def writedisplay(whattodisplay):
             wiringpi.digitalWrite(A2, LOW)
 
         wiringpi.digitalWrite(latch, LOW)
-        wiringpi.shiftOut(SER, CLK, 1, whattodisplay[pos])
+        wiringpi.shiftOut(SER, CLK, 1, ord(whattodisplay[pos]))
         wiringpi.digitalWrite(latch, HIGH)
         wiringpi.delay(1)
         wiringpi.digitalWrite(CE, LOW)
