@@ -17,7 +17,7 @@ import wiringpi2 as wiringpi
 
 '''
 hardware notes
-using PDSP-1880 and 74HC595 (check)
+using PDSP-1880 and 74LS595N
 see pin assignments for GPIO (header pin number) to variable to chip mapping
 header pin column to be filled in after perfboard prototype is laid out
 --- Power & Ground
@@ -46,7 +46,7 @@ CE = 15                 # PDSP-14                       ??
 WR = 19                 # PDSP-13                       ??
 latch = 21              # ShiftRegister-12              ??
 SER = 23                # ShiftRegister-14              ??
-CLK = 29                # ShiftRegister-11              ??
+CLK = 15                # ShiftRegister-11              ??
 
 # some wiringPi vars to make reading the code easier to read
 LOW = 0
