@@ -67,17 +67,16 @@ def resetdisplay():
 def setup():
     wiringpi.wiringPiSetupPhys()
     # assign pins
-    wiringpi.pinMode(3, OUTPUT)
-    wiringpi.pinMode(3, OUTPUT)
-    wiringpi.pinMode(5, OUTPUT)
-    wiringpi.pinMode(7, OUTPUT)
-    wiringpi.pinMode(11, OUTPUT)
-    wiringpi.pinMode(13, OUTPUT)
-    wiringpi.pinMode(15, OUTPUT)
-    wiringpi.pinMode(19, OUTPUT)
-    wiringpi.pinMode(21, OUTPUT)
-    wiringpi.pinMode(23, OUTPUT)
-    wiringpi.pinMode(29, OUTPUT)
+    wiringpi.pinMode(RST, OUTPUT)
+    wiringpi.pinMode(A0, OUTPUT)
+    wiringpi.pinMode(A1, OUTPUT)
+    wiringpi.pinMode(A2, OUTPUT)
+    wiringpi.pinMode(A3, OUTPUT)
+    wiringpi.pinMode(CE, OUTPUT)
+    wiringpi.pinMode(WR, OUTPUT)
+    wiringpi.pinMode(latch, OUTPUT)
+    wiringpi.pinMode(SER, OUTPUT)
+    wiringpi.pinMode(CLK, OUTPUT)
     resetdisplay()
 
 
