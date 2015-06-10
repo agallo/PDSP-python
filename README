@@ -2,7 +2,7 @@ This script is designed to control a PDSP (or HDSP) type display using Python
 when connected to a Raspberry Pi.
 
 Things to do:
-    * Add in necessary code to send output to GPIO
     * more flexible input via args (currently, using statically defined variable)
+    * gracefully handle SIG-INT (ctrl-c) and clear display upon exit
     
 This code is based on Arduino code from http://www.nycresistor.com/2010/05/30/working-with-the-hdsp-2111/
