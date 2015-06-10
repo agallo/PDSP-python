@@ -7,12 +7,12 @@ import wiringpi2 as wiringpi
 # wiringpi has high speed delays
 # usleep = lambda x: sleep(x / 1000000.0)
 
-# TODO figure out wiringPi2 shift register use (complete??)
 # TODO command line argument: -i (string to display (need to fiugre out how to accept special chars)
 # TODO command line argument: -t (system local time, 12 hour (no AM or PM))
 # TODO command line argument: -T (system local time, 24 hour)
 # TODO command line argument: -u (UTC, 24 hour)
 # TODO command line argument: -s (echo what is being sent to display to standard out)
+# TODO gracefully handle SIG-INT (ctrl-c) and clear display upon exit
 
 
 '''
