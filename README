@@ -4,3 +4,5 @@ when connected to a Raspberry Pi.
 Things to do:
     * Add in necessary code to send output to GPIO
     * more flexible input via args (currently, using statically defined variable)
+    
+This code is based on Arduino code from http://www.nycresistor.com/2010/05/30/working-with-the-hdsp-2111/
