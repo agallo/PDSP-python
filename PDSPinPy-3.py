@@ -46,7 +46,7 @@ CE = 15                 # PDSP-14                       ??
 WR = 19                 # PDSP-13                       ??
 latch = 21              # ShiftRegister-12              ??
 SER = 23                # ShiftRegister-14              ??
-CLK = 15                # ShiftRegister-11              ??
+CLK = 18                # ShiftRegister-11              ??
 
 # some wiringPi vars to make reading the code easier to read
 LOW = 0
