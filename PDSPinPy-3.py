@@ -86,7 +86,7 @@ def scrolldisplay(istring):
         print tmpstr[0:8]
         writedisplay(tmpstr)
         istring.append(istring.pop(0))
-        sleep(.5)
+        sleep(.3)
     return
 
 
@@ -131,7 +131,7 @@ def pad(needtopad):
     return needtopad
 
 # main (to be replaced with arguments)
-inputstring = list('123456789')
+inputstring = list('23:52:00')
 # 24 hour time for input
 # inputstring = time.strftime('%H:%M:%S')
 # 24 hour time for input
@@ -147,7 +147,7 @@ def main():
             scrolldisplay(inputstring)
         else:
             pad(inputstring)
-        sleep(1)
+        #sleep(1)
 
 
 main()
