@@ -91,9 +91,7 @@ def scrolldisplay(istring):
 
 
 def writedisplay(whattodisplay):
-
     for pos in range(0, 8):
-
         if 1 & pos <> 0:
             wiringpi.digitalWrite(A0, HIGH)
         else:
