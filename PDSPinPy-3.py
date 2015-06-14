@@ -21,8 +21,9 @@ using PDSP-1880 and 74LS595N
 see pin assignments for GPIO (header pin number) to variable to chip mapping
 header pin column to be filled in after perfboard prototype is laid out
 --- Power & Ground
-GND         PDSP-16,18, ShfR-8,13 ??
-5V          PDSP-2,10,11,15,19 SfhR-10,16 ??
+Lead        destination                     header
+GND         PDSP-16,18, ShfR-8,13           16
+5V          PDSP-2,10,11,15,19 SfhR-10,16   15
 additional (intra board, SR-->PDSP) connections documented here for completeness
 ShfR -  PDSP
 15      20
@@ -37,16 +38,16 @@ ShfR -  PDSP
 
 # define pin names
 # VAR = GPIO header     PDSP or Shift Register pin#     via header pin
-RST = 3                 # PDSP-1                        ??
-A0 = 5                  # PDSP-3                        ??
-A1 = 7                  # PDSP-4                        ??
-A2 = 11                 # PDSP-5                        ??
-A3 = 13                 # PDSP-6                        ??
-CE = 15                 # PDSP-14                       ??
-WR = 19                 # PDSP-13                       ??
-latch = 21              # ShiftRegister-12              ??
-SER = 23                # ShiftRegister-14              ??
-CLK = 18                # ShiftRegister-11              ??
+RST = 3                 # PDSP-1                        1
+A0 = 5                  # PDSP-3                        3
+A1 = 7                  # PDSP-4                        4
+A2 = 11                 # PDSP-5                        5
+A3 = 13                 # PDSP-6                        6
+CE = 15                 # PDSP-14                       7
+WR = 19                 # PDSP-13                       8
+latch = 21              # ShiftRegister-12              10
+SER = 23                # ShiftRegister-14              11
+CLK = 18                # ShiftRegister-11              12
 
 # some wiringPi vars to make reading the code easier to read
 LOW = 0
