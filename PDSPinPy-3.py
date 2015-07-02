@@ -18,22 +18,24 @@ import wiringpi2 as wiringpi
 '''
 hardware notes
 using PDSP-1880 and 74LS595N
-see pin assignments for GPIO (header pin number) to variable to chip mapping
-header pin column to be filled in after perfboard prototype is laid out
+header pin numbers refer to customer PCB header row
+if using a breadboard, ignore header pins and connect GPIO pins as indicated
+see pin names section for GPIO (header pin number) to variable to chip mapping
 --- Power & Ground
-Lead        destination                     header
+Signal      destination                     header
 GND         PDSP-16,18, ShfR-8,13           16
 5V          PDSP-2,10,11,15,19 SfhR-10,16   15
+
 additional (intra board, SR-->PDSP) connections documented here for completeness
-ShfR -  PDSP
-15      20
-1       21
-2       25
-3       26
-4       27
-5       28
-6       29
-7       30
+ShfR    PDSP    Signal
+15      20      D0
+1       21      D1
+2       25      D2
+3       26      D3
+4       27      D4
+5       28      D5
+6       29      D6
+7       30      D7
 '''
 
 # define pin names
@@ -56,7 +58,6 @@ OUTPUT = 1
 
 
 def resetdisplay():
-    # some code to reset
     wiringpi.digitalWrite(RST, LOW)
     wiringpi.delayMicroseconds(1)
     wiringpi.digitalWrite(RST, HIGH)
