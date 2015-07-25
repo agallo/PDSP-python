@@ -4,5 +4,6 @@ when connected to a Raspberry Pi.
 Things to do:
     * more flexible input via args (currently, using statically defined variable)
     * gracefully handle SIG-INT (ctrl-c) and clear display upon exit
+    * for PBC - rearrange header pins to group unused pins so that a 1x6 header can be used
     
 This code is based on Arduino code from http://www.nycresistor.com/2010/05/30/working-with-the-hdsp-2111/
